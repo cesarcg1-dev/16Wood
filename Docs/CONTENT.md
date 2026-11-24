@@ -1,7 +1,7 @@
 # CONTENT — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Inventario de contenidos del sitio
 
 ## 1. Advertencia general
@@ -125,4 +125,4 @@ Marca «Woodworking / DISEÑO EN MADERA», enlaces a Inicio, Productos, Servicio
 
 **Documento:** CONTENT.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

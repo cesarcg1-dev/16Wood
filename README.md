@@ -1,7 +1,7 @@
 # Documentación — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Índice de documentación y estado general
 
 **Nombre del proyecto:** 16Wood  
@@ -26,6 +26,7 @@ Este es el único `README.md` del proyecto y está en la raíz. Para instalar, a
 
 ## 2. Cómo usar estos documentos
 
+- El trabajo avanza primero por las etapas de `Docs/ROADMAP.md`; los puntos de `Docs/MEJORAS.md` se atienden al terminar el roadmap.
 - Antes de cambiar código, leer este índice y `RUNBOOK.md`.
 - Antes de cambiar el diseño, leer `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 - Antes de cambiar el contenido, leer `Docs/CONTENT.md` y comprobar si el dato es de demostración.
@@ -49,4 +50,4 @@ Toda IA que modifique este proyecto debe leer este índice y, según el cambio, 
 
 **Documento:** README.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

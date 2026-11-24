@@ -2,7 +2,7 @@
 
 **Proyecto:** 16Wood  
 **Carpeta del código:** `woodworking/`  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Procedimientos operativos
 
 Este documento reúne los comandos y pasos reales de este proyecto. Para qué se construye y en qué estado está, ver `README.md` en la raíz.
@@ -14,6 +14,7 @@ Este documento reúne los comandos y pasos reales de este proyecto. Para qué se
 - [Resolución de problemas](#resolución-de-problemas)
 - [Datos e imágenes](#datos-e-imágenes)
 - [Pendiente de decisión](#pendiente-de-decisión)
+- [PocketBase local](#pocketbase-local)
 
 ## 2. OP. Operaciones
 
@@ -29,6 +30,8 @@ Todos los comandos se ejecutan dentro de `woodworking/`.
 |OP-06|Compilar|`npm run build`. Genera `dist/index.html`.|
 |OP-07|Previsualizar la compilación|`npm run preview`.|
 |OP-08|Comandos de Astro|`npm run astro -- <comando>`, por ejemplo `npm run astro -- check`.|
+|OP-09|Arrancar PocketBase|`.\backend\pocketbase.exe serve --http=127.0.0.1:8090`. Ver sección 7.|
+|OP-10|Crear colecciones|`powershell -ExecutionPolicy Bypass -File .\scripts\setup-pocketbase.ps1`. Pide credenciales al ejecutarse.|
 
 **No disponibles:** este proyecto no tiene los scripts `npm test`, `npm run lint` ni `npm run format`. No ejecutarlos como si existieran.
 
@@ -52,23 +55,39 @@ La revisión de tipos con `npm run astro -- check` requiere instalar `@astrojs/c
 |Un carrusel o el menú no responde|Verificar que la isla React correspondiente esté en `src/pages/index.astro` con `client:load`.|
 |Las fotos no aparecen|Las imágenes vienen de Unsplash por internet; comprobar conexión o sustituirlas por archivos locales.|
 |No aparece un componente de interfaz|Revisar `src/components/ui/` y el alias `@/` en `tsconfig.json`.|
-|PocketBase no responde|El cliente en `src/lib/pocketbase.ts` existe, pero la página actual no lo usa; no es necesario para compilar.|
+|PocketBase no responde|Arrancar con OP-09 y comprobar `http://127.0.0.1:8090/api/health`. La página actual no usa el cliente, así que no afecta la compilación.|
+|El script de colecciones falla al autenticar|Volver a ejecutar OP-09 y revisar correo y contraseña del superusuario; el script los pide en la terminal.|
 
 ## 5. Datos e imágenes
 
 - El sitio usa textos del prototipo descrito en `Docs/REFERENCIAS.md` y `Docs/CONTENT.md`.
 - Las imágenes son URLs de Unsplash; no hay fotografías propias en `public/`.
 - No hay formulario con envío a servidor, ni integración con FormSubmit, Lovable o servicios externos de correo.
-- Teléfono, correo y redes sociales son de demostración.
+- Teléfono, correo y redes sociales siguen siendo de demostración en la página. Los datos reales están en `DATOSREALES.md`; sustituirlos es M-01.
 
 ## 6. Pendiente de decisión
 
 - Confirmar la marca comercial en pantalla: actualmente se usa **16Wood** (M-04 en `Docs/MEJORAS.md`).
-- Sustituir datos de contacto e imágenes por información real.
-- Validar visualmente la página en navegador antes de marcar completada la Etapa 02.
+- Sustituir datos de contacto e imágenes por información real (`DATOSREALES.md`, M-01).
+- Decidir en la Etapa 07 si PocketBase se publica o se mantiene solo en local.
+
+## 7. PocketBase local
+
+Instancia de desarrollo para la Etapa 03 del `Docs/ROADMAP.md`. Versión verificada: PocketBase 0.42.3.
+
+|Acción|Comando o URL|
+|---|---|
+|Arrancar|`.\backend\pocketbase.exe serve --http=127.0.0.1:8090` (OP-09).|
+|Comprobar salud|`http://127.0.0.1:8090/api/health` → debe responder HTTP 200.|
+|Panel de administración|`http://127.0.0.1:8090/_/`. El administrador se llama **superusuario**.|
+|Crear colecciones|`powershell -ExecutionPolicy Bypass -File .\scripts\setup-pocketbase.ps1` (OP-10).|
+|Verificar lectura pública|`http://127.0.0.1:8090/api/collections/productos/records`, `.../proyectos/records` y `.../solicitudes/records` → deben responder HTTP 200.|
+|Respaldar|Copiar `backend/pb_data/` con PocketBase detenido.|
+
+`PUBLIC_POCKETBASE_URL` en `.env.example` apunta a `http://127.0.0.1:8090`. El script pide el correo y la contraseña del superusuario al ejecutarse: **no guardar credenciales en archivos ni en el repositorio**. `backend/pb_data/` y `backend/pocketbase.exe` están excluidos en `.gitignore`.
 
 ---
 
 **Documento:** RUNBOOK.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

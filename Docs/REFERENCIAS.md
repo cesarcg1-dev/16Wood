@@ -1,7 +1,7 @@
 # REFERENCIAS — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Inventario de archivos de apoyo entregados por César
 
 ## 1. Archivos recibidos
@@ -47,4 +47,4 @@ Fotografías: URLs de Unsplash, cargadas por internet. Contacto y redes: datos d
 
 **Documento:** REFERENCIAS.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

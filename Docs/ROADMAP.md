@@ -1,8 +1,8 @@
 # ROADMAP — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
-**Estado general:** Rediseño de la landing page en preparación
+**Versión:** 1.3.0  
+**Estado general:** Etapas 01 a 03 completadas; etapas 04 a 08 pendientes; revisión ordenada
 
 ## 1. Objetivo
 
@@ -24,12 +24,13 @@ El proyecto busca contar con una presencia digital atractiva que permita mostrar
 |Etapa|Nombre|Prioridad|Estado|
 |---|---|---|---|
 |01|Estabilización del proyecto|Alta|Completada|
-|02|Diseño y presentación de la landing page|Alta|Implementada; pendiente de validación visual|
-|03|Catálogo de productos|Alta|Pendiente|
-|04|Contacto y conversión comercial|Alta|Pendiente|
-|05|Adaptabilidad y optimización|Alta|Pendiente|
-|06|SEO y publicación|Media|Pendiente|
-|07|Mejoras posteriores|Baja|Pendiente|
+|02|Diseño y presentación de la landing page|Alta|Completada|
+|03|Backend con PocketBase|Media|Completada|
+|04|Catálogo de productos|Alta|Pendiente|
+|05|Contacto y conversión comercial|Alta|Pendiente|
+|06|Adaptabilidad y optimización|Alta|Pendiente|
+|07|SEO y publicación|Media|Pendiente|
+|08|Mejoras posteriores|Baja|Pendiente|
 
 ## 4. Desarrollo por etapas
 
@@ -48,7 +49,7 @@ Actividades:
 
 **Criterio de aceptación:** el proyecto inicia sin errores, muestra los estilos correctamente y genera una compilación de producción exitosa.
 
-**Estado:** completada. Última validación: `npm run build` el 2026-11-24, correcto.
+**Estado:** completada. Revisada el 2026-11-24: `npm install` sin vulnerabilidades, servidor en `localhost:4321` con HTTP 200, estilos globales aplicados y `npm run build` correcto.
 
 ### ETAPA 02 — Diseño y presentación de la landing page
 
@@ -57,28 +58,62 @@ Actividades:
 Secciones previstas:
 
 - Encabezado y navegación.
-- Hero principal con imagen destacada.
-- Presentación del negocio.
+- Hero principal con dos diapositivas y presentación del negocio.
+- Productos destacados en carrusel.
 - Servicios de maquinado CNC.
-- Presentación de trabajos destacados.
-- Beneficios y diferenciadores.
-- Testimonios, únicamente si existen testimonios reales.
-- Llamadas a la acción.
+- Trabajos destacados.
+- Proceso de trabajo en cuatro pasos.
+- Llamadas a la acción y banner de contacto.
 - Pie de página.
 
 **Referencia actual:** el prototipo estático entregado en `woodworking-landing-html.zip`. Contiene encabezado, hero con dos diapositivas, productos destacados, servicios CNC, proyectos, proceso, contacto y pie de página. Ver `Docs/REFERENCIAS.md`.
 
-**Estado del código:** la página en `src/pages/index.astro` ya incluye las secciones anteriores, adaptadas a Astro, Tailwind CSS v4 y componentes shadcn/ui. La etapa está **implementada**; falta la validación visual en navegador antes de marcarla como completada.
+**Estado:** completada. Revisada el 2026-11-24: comprobadas las secciones y las islas en el HTML generado y confirmada la validación visual en navegador con Ctrl+F5.
 
 **Criterio de aceptación:** la página debe tener una estructura visual coherente, transmitir claramente qué ofrece 16Wood y conducir al visitante hacia el contacto o el catálogo.
 
-### ETAPA 03 — Catálogo de productos
+### ETAPA 03 — Backend con PocketBase
+
+**Objetivo:** definir la base de datos y decidir cómo se expondrá antes de conectar el catálogo y el formulario de contacto.
+
+Actividades:
+
+- Decidir si se usa la instancia local de `backend/` o una instancia publicada, y documentar la URL en `.env.example` sin incluir credenciales.
+- Verificar la conexión desde `src/lib/pocketbase.ts` mediante `PUBLIC_POCKETBASE_URL`.
+- Definir las colecciones necesarias: productos, proyectos y solicitudes de cotización.
+- Definir los campos de cada colección con información validada; para contacto, usar `DATOSREALES.md` como fuente.
+- Revisar las reglas de acceso de PocketBase para exponer únicamente lo público.
+- Mantener `backend/pb_data/` y `backend/pocketbase.exe` fuera del repositorio, según `.gitignore`.
+- Registrar los comandos de arranque y respaldo en `RUNBOOK.md`.
+
+**Colecciones previstas:**
+
+|Colección|Campos|
+|---|---|
+|`productos`|`nombre` (text), `categoria` (text), `descripcion` (editor), `material` (text), `precio` (number, opcional), `plazo_entrega` (text, opcional), `imagen` (file), `destacado` (bool)|
+|`proyectos`|`titulo` (text), `descripcion` (editor), `categoria` (text), `imagen` (file), `fecha` (date)|
+|`solicitudes`|`nombre` (text), `correo` (email), `telefono` (text), `mensaje` (editor), `servicio` (text, opcional), `estado` (text, control interno)|
+
+Los precios y plazos reales dependen de M-03 en `Docs/MEJORAS.md`; mientras tanto, esos campos quedan vacíos u opcionales.
+
+**Reglas de acceso previstas:**
+
+- `productos` y `proyectos`: lectura pública; escritura solo para el superusuario.
+- `solicitudes`: creación pública; lectura y escritura solo para el superusuario.
+
+En PocketBase 0.42.3 el administrador se llama **superusuario**. Se crea en `http://127.0.0.1:8090/_/`; sus credenciales no se guardan en este repositorio.
+
+**Criterio de aceptación:** la aplicación puede leer los datos previstos desde PocketBase, las reglas de acceso están revisadas y no hay credenciales versionadas.
+
+**Estado:** completada. Verificada el 2026-11-24: PocketBase 0.42.3 local en `127.0.0.1:8090`, `/api/health` y SDK correctos; colecciones `productos`, `proyectos` y `solicitudes` creadas con el script `scripts/setup-pocketbase.ps1`. Reglas comprobadas por API pública: lectura abierta en productos y proyectos, creación cerrada; en solicitudes, lectura cerrada y creación pública. Sin credenciales en el repositorio.
+
+### ETAPA 04 — Catálogo de productos
 
 **Objetivo:** presentar los productos de manera ordenada y atractiva.
 
 Actividades:
 
-- Definir la estructura de datos de productos.
+- Confirmar la estructura de datos de productos definida en la Etapa 03.
 - Definir las categorías definitivas.
 - Sustituir los productos de demostración por productos reales.
 - Incorporar fotografías de calidad.
@@ -87,7 +122,7 @@ Actividades:
 
 **Criterio de aceptación:** los productos deben mostrarse correctamente, con información confiable, fotografías adecuadas y una navegación sencilla.
 
-### ETAPA 04 — Contacto y conversión comercial
+### ETAPA 05 — Contacto y conversión comercial
 
 **Objetivo:** facilitar que los visitantes soliciten información o una cotización.
 
@@ -96,12 +131,12 @@ Actividades:
 - Definir los medios oficiales de contacto.
 - Incorporar botones de contacto visibles.
 - Configurar el enlace de WhatsApp, si corresponde.
--Definir el mecanismo para solicitar cotizaciones.
+- Definir el mecanismo para solicitar cotizaciones.
 - Verificar que los enlaces funcionen correctamente.
 
 **Criterio de aceptación:** un visitante debe poder identificar fácilmente cómo solicitar información sobre un producto o servicio.
 
-### ETAPA 05 — Adaptabilidad y optimización
+### ETAPA 06 — Adaptabilidad y optimización
 
 **Objetivo:** mejorar la experiencia de navegación y el rendimiento.
 
@@ -115,7 +150,7 @@ Actividades:
 
 **Criterio de aceptación:** el sitio debe funcionar correctamente en los dispositivos y navegadores principales, sin elementos desbordados ni problemas importantes de rendimiento.
 
-### ETAPA 06 — SEO y publicación
+### ETAPA 07 — SEO y publicación
 
 **Objetivo:** preparar el sitio para su publicación en internet.
 
@@ -130,14 +165,15 @@ Actividades:
 
 **Criterio de aceptación:** el sitio debe estar publicado, ser accesible desde su dominio y contar con sus elementos básicos de posicionamiento y presentación.
 
-### ETAPA 07 — Mejoras posteriores
+### ETAPA 08 — Mejoras posteriores
 
 **Objetivo:** incorporar nuevas funcionalidades cuando exista una necesidad real.
 
-Posibles mejoras: panel administrativo, catálogo conectado a una base de datos, administración de fotografías, solicitudes de cotización con seguimiento, estadísticas y nuevas secciones comerciales. No forman parte del alcance inicial.
+Posibles mejoras: panel administrativo, administración de fotografías, solicitudes de cotización con seguimiento, estadísticas y nuevas secciones comerciales. La base de datos se define en la Etapa 03 y se aplica al catálogo de la Etapa 04; no forman parte del alcance inicial.
 
 ## 5. Reglas para avanzar
 
+- **Orden de trabajo:** avanzar primero por las etapas de este ROADMAP, en orden. Los puntos de `Docs/MEJORAS.md` se atienden únicamente cuando terminen todas las etapas.
 - Cada etapa debe revisarse antes de comenzar la siguiente.
 - No se deben modificar funcionalidades aprobadas sin autorización.
 - Las mejoras nuevas deben registrarse antes de implementarse.
@@ -149,4 +185,4 @@ Posibles mejoras: panel administrativo, catálogo conectado a una base de datos,
 
 **Documento:** ROADMAP.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

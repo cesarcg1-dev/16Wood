@@ -1,7 +1,7 @@
 # ESTILOS — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Guía de diseño visual
 
 ## 1. Identidad visual
@@ -131,4 +131,4 @@ Si una solicitud requiere modificar alguna regla de este documento, proponer el 
 
 **Documento:** ESTILOS.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0

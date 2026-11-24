@@ -1,7 +1,7 @@
 # PRD — 16Wood
 
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2  
+**Versión:** 1.3.0  
 **Tipo:** Documento de requisitos del producto
 
 ## 1. Propósito
@@ -102,4 +102,4 @@ Ver `Docs/REFERENCIAS.md` y `Docs/ESTILOS.md`.
 
 **Documento:** PRD.md  
 **Proyecto:** 16Wood  
-**Versión:** 1.2.2
+**Versión:** 1.3.0
