@@ -15,6 +15,7 @@ Este documento reúne los comandos y pasos reales de este proyecto. Para qué se
 - [Datos e imágenes](#datos-e-imágenes)
 - [Pendiente de decisión](#pendiente-de-decisión)
 - [PocketBase local](#pocketbase-local)
+- [Publicación](#publicación)
 
 ## 2. OP. Operaciones
 
@@ -32,6 +33,7 @@ Todos los comandos se ejecutan dentro de `woodworking/`.
 |OP-08|Comandos de Astro|`npm run astro -- <comando>`, por ejemplo `npm run astro -- check`.|
 |OP-09|Arrancar PocketBase|`.\backend\pocketbase.exe serve --http=127.0.0.1:8090`. Ver sección 7.|
 |OP-10|Crear colecciones|`powershell -ExecutionPolicy Bypass -File .\scripts\setup-pocketbase.ps1`. Pide credenciales al ejecutarse.|
+|OP-11|Publicar|`git push origin main` dispara `.github/workflows/deploy.yml` hacia GitHub Pages.|
 
 **No disponibles:** este proyecto no tiene los scripts `npm test`, `npm run lint` ni `npm run format`. No ejecutarlos como si existieran.
 
@@ -69,7 +71,7 @@ La revisión de tipos con `npm run astro -- check` requiere instalar `@astrojs/c
 
 - Confirmar la marca comercial en pantalla: actualmente se usa **16Wood** (M-04 en `Docs/MEJORAS.md`).
 - Sustituir las imágenes de Unsplash por fotografías propias optimizadas; los datos de contacto ya son reales (`DATOSREALES.md`, M-01).
-- Decidir en la Etapa 07 si PocketBase se publica o se mantiene solo en local.
+- PocketBase se mantiene solo en local: la página publicada es estática y no depende de él (decisión de la Etapa 07).
 
 ## 7. PocketBase local
 
@@ -85,6 +87,20 @@ Instancia de desarrollo para la Etapa 03 del `Docs/ROADMAP.md`. Versión verific
 |Respaldar|Copiar `backend/pb_data/` con PocketBase detenido.|
 
 `PUBLIC_POCKETBASE_URL` en `.env.example` apunta a `http://127.0.0.1:8090`. El script pide el correo y la contraseña del superusuario al ejecutarse: **no guardar credenciales en archivos ni en el repositorio**. `backend/pb_data/` y `backend/pocketbase.exe` están excluidos en `.gitignore`.
+
+## 8. Publicación
+
+Sitio estático publicado en GitHub Pages (Etapa 07 del `Docs/ROADMAP.md`).
+
+|Elemento|Valor|
+|---|---|
+|URL pública|`https://cesarcg1-dev.github.io/16Wood/`|
+|URL local con la ruta base|`http://localhost:4321/16Wood/`|
+|Configuración|`site` y `base: '/16Wood'` en `astro.config.mjs`.|
+|Despliegue|`.github/workflows/deploy.yml`, disparado por `git push origin main` (OP-11).|
+|Archivos de soporte|`public/robots.txt`, `public/sitemap.xml`, `public/favicon.svg` y `public/.nojekyll`.|
+
+En GitHub se debe tener **Settings → Pages → Source: GitHub Actions**. El despliegue no sube PocketBase: la web publicada no depende del backend local.
 
 ---
 

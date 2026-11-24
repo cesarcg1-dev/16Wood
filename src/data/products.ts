@@ -22,7 +22,7 @@ export const products: Product[] = [
     material: "Caoba",
     precio: "Consultar precio",
     plazo_entrega: "30 días",
-    imagen: "/images/products/caja-joyero.webp",
+    imagen: `${import.meta.env.BASE_URL}/images/products/caja-joyero.webp`,
     destacado: true,
     alt: "Caja joyero de madera de caoba",
   },
