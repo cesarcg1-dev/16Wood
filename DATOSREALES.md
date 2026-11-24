@@ -19,7 +19,7 @@
 
 ## 2. Uso en la página
 
-Los datos de demostración del prototipo siguen en `src/pages/index.astro`. Sustituirlos corresponde a M-01 en `Docs/MEJORAS.md` y requiere una instrucción aparte.
+Los datos de contacto ya están aplicados en `src/pages/index.astro` (Etapa 05): WhatsApp con mensaje de cotización, correo y dirección. El registro de la mejora M-01 se atiende después de terminar el roadmap, según la regla de orden.
 
 ---
 

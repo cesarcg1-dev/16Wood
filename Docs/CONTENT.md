@@ -31,7 +31,7 @@ La página implementada en `src/pages/index.astro` usa los textos del prototipo 
 - Productos destacados, servicios CNC, proyectos, proceso de cuatro pasos y banner de contacto.
 - Pie de página: «© 2026 16Wood. Todos los derechos reservados.».
 
-Los datos de contacto siguen siendo los del prototipo: `+52 55 1234 5678` y `hola@woodworking.com`. El catálogo tiene un producto real: «Caja joyero»; la lista completa está pendiente.
+Los datos de contacto ya son reales: WhatsApp `811 1917 150` y correo `cesarcg1@gmail.com`. El catálogo tiene un producto real: «Caja joyero»; la lista completa está pendiente.
 
 ## 4. Encabezado y navegación del prototipo
 
@@ -89,15 +89,16 @@ Texto principal: «Fabricación personalizada con tecnología de punta». CTA: �
 3. Fabricamos con precisión.
 4. Entregamos tu proyecto.
 
-## 10. Contacto del prototipo
+## 10. Contacto en la página
 
-|Medio|Valor de demostración|
+|Medio|Valor|
 |---|---|
-|Teléfono|+52 55 1234 5678|
-|Correo|hola@woodworking.com|
-|Redes|Marcadores de posición para Facebook, Instagram y YouTube|
+|WhatsApp|`811 1917 150`, enlace `wa.me` con mensaje prellenado de cotización.|
+|Correo|`cesarcg1@gmail.com`|
+|Dirección|Emancipacion Proletaria No. 1835, Colonia CROC, Monterrey, Nuevo León.|
+|Redes|No se muestran enlaces falsos; pendiente de definir si habrá redes reales.|
 
-Mensaje: «¿Tienes un proyecto en mente? Cuéntanos qué necesitas y encontraremos la mejor forma de fabricarlo.».
+El botón «Solicitar cotización» abre WhatsApp. Mensaje de la sección: «¿Tienes un proyecto en mente? Cuéntanos qué necesitas y encontraremos la mejor forma de fabricarlo.».
 
 ## 11. Pie de página del prototipo
 
@@ -112,7 +113,7 @@ Marca «Woodworking / DISEÑO EN MADERA», enlaces a Inicio, Productos, Servicio
 ## 13. Antes de publicar
 
 - Confirmar marca comercial: 16Wood, Woodworking u otra.
-- Sustituir teléfono, correo y redes por datos reales.
+- Confirmar si habrá redes sociales reales; no se mostrarán marcadores de posición.
 - Sustituir las imágenes de Unsplash por fotografías propias optimizadas.
 - Definir productos, categorías, precios y plazos reales.
 - Revisar textos, títulos y metadatos para SEO.

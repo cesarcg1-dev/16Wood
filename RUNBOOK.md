@@ -68,7 +68,7 @@ La revisión de tipos con `npm run astro -- check` requiere instalar `@astrojs/c
 ## 6. Pendiente de decisión
 
 - Confirmar la marca comercial en pantalla: actualmente se usa **16Wood** (M-04 en `Docs/MEJORAS.md`).
-- Sustituir datos de contacto e imágenes por información real (`DATOSREALES.md`, M-01).
+- Sustituir las imágenes de Unsplash por fotografías propias optimizadas; los datos de contacto ya son reales (`DATOSREALES.md`, M-01).
 - Decidir en la Etapa 07 si PocketBase se publica o se mantiene solo en local.
 
 ## 7. PocketBase local

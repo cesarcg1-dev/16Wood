@@ -2,7 +2,7 @@
 
 **Proyecto:** 16Wood  
 **Versión:** 1.3.0  
-**Estado general:** Etapas 01 a 04 completadas; etapas 05 a 08 pendientes; revisión ordenada
+**Estado general:** Etapas 01 a 05 completadas; etapas 06 a 08 pendientes; revisión ordenada
 
 ## 1. Objetivo
 
@@ -27,7 +27,7 @@ El proyecto busca contar con una presencia digital atractiva que permita mostrar
 |02|Diseño y presentación de la landing page|Alta|Completada|
 |03|Backend con PocketBase|Media|Completada|
 |04|Catálogo de productos|Alta|Completada|
-|05|Contacto y conversión comercial|Alta|Pendiente|
+|05|Contacto y conversión comercial|Alta|Completada|
 |06|Adaptabilidad y optimización|Alta|Pendiente|
 |07|SEO y publicación|Media|Pendiente|
 |08|Mejoras posteriores|Baja|Pendiente|
@@ -137,6 +137,8 @@ Actividades:
 - Verificar que los enlaces funcionen correctamente.
 
 **Criterio de aceptación:** un visitante debe poder identificar fácilmente cómo solicitar información sobre un producto o servicio.
+
+**Estado:** completada. Revisada el 2026-11-24: botón de cotización por WhatsApp con mensaje prellenado, teléfono y correo reales y dirección visible; sin enlaces falsos. Verificado en el HTML generado y confirmado visualmente en navegador con Ctrl+F5.
 
 ### ETAPA 06 — Adaptabilidad y optimización
 
