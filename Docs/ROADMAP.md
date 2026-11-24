@@ -2,7 +2,7 @@
 
 **Proyecto:** 16Wood  
 **Versión:** 1.3.0  
-**Estado general:** Etapas 01 a 05 completadas; etapas 06 a 08 pendientes; revisión ordenada
+**Estado general:** Etapas 01 a 06 completadas; etapas 07 y 08 pendientes; revisión ordenada
 
 ## 1. Objetivo
 
@@ -28,7 +28,7 @@ El proyecto busca contar con una presencia digital atractiva que permita mostrar
 |03|Backend con PocketBase|Media|Completada|
 |04|Catálogo de productos|Alta|Completada|
 |05|Contacto y conversión comercial|Alta|Completada|
-|06|Adaptabilidad y optimización|Alta|Pendiente|
+|06|Adaptabilidad y optimización|Alta|Completada|
 |07|SEO y publicación|Media|Pendiente|
 |08|Mejoras posteriores|Baja|Pendiente|
 
@@ -153,6 +153,8 @@ Actividades:
 - Verificar accesibilidad básica.
 
 **Criterio de aceptación:** el sitio debe funcionar correctamente en los dispositivos y navegadores principales, sin elementos desbordados ni problemas importantes de rendimiento.
+
+**Estado:** completada. Revisada el 2026-11-24: fotografía del producto convertida a WebP (94% menos peso), auditoría de encabezados, imágenes y anclas correcta y validación visual en escritorio, tableta y teléfono confirmada por César.
 
 ### ETAPA 07 — SEO y publicación
 

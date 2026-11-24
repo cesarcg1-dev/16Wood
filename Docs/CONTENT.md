@@ -63,7 +63,7 @@ Diapositiva 2:
 |---|---|---|---|---|---|
 |pza 1|Caja joyero|Hogar|Caoba|Consultar precio|30 días|
 
-La fuente actual es `src/data/products.ts` y la fotografía propia está en `public/images/products/caja-joyero.png`. Los cuatro productos de demostración del prototipo (Charola de nogal, Panel decorativo CNC, Reloj de madera y Accesorios para el hogar) quedaron sustituidos. Las categorías definitivas se ampliarán cuando haya más productos reales.
+La fuente actual es `src/data/products.ts` y la fotografía propia está en `public/images/products/caja-joyero.webp` (convertida desde PNG; 94% menos peso). Los cuatro productos de demostración del prototipo (Charola de nogal, Panel decorativo CNC, Reloj de madera y Accesorios para el hogar) quedaron sustituidos. Las categorías definitivas se ampliarán cuando haya más productos reales.
 
 ## 7. Servicios CNC del prototipo
 
@@ -106,7 +106,7 @@ Marca «Woodworking / DISEÑO EN MADERA», enlaces a Inicio, Productos, Servicio
 
 ## 12. Imágenes y recursos visuales
 
-- La fotografía propia del catálogo es `public/images/products/caja-joyero.png`; el resto de las secciones sigue usando imágenes de Unsplash.
+- La fotografía propia del catálogo es `public/images/products/caja-joyero.webp`; el resto de las secciones sigue usando imágenes de Unsplash.
 - El prototipo usa imágenes de Unsplash cargadas por internet.
 - La captura `Precisión CNC y belleza en madera.png` muestra la página renderizada del prototipo.
 

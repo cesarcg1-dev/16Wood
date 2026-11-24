@@ -17,14 +17,14 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 **Cambios**
 
 - Etapa 03 «Backend con PocketBase» agregada al `Docs/ROADMAP.md`; antiguas etapas 03 a 07 renumeradas a 04 a 08.
-- Etapas 01 a 05 marcadas como completadas; etapas 06 a 08 siguen pendientes.
+- Etapas 01 a 06 marcadas como completadas; etapas 07 y 08 siguen pendientes.
 - `Docs/MEJORAS.md`: mejoras en estado Pendiente y correspondencia ajustada a las 8 etapas.
 - `README.md` y `Docs/ROADMAP.md`: regla de orden de trabajo; el roadmap se termina antes de atender las mejoras.
 - `RUNBOOK.md`: sección «PocketBase local», operaciones OP-09 y OP-10, y referencia a los datos de contacto ya aplicados.
 - `scripts/setup-pocketbase.ps1`: crea las tres colecciones y pide credenciales al ejecutarse; no guarda secretos.
 - `DATOSREALES.md`: fuente única de los datos reales de contacto; ya aplicados en la página.
 - `src/data/products.ts`: producto real «Caja joyero» con los campos de la colección `productos` de PocketBase; referencia interna `pza 1`.
-- `public/images/products/caja-joyero.png`: fotografía propia del producto; sustituye las imágenes de Unsplash del carrusel.
+- `public/images/products/caja-joyero.webp`: fotografía propia del producto en WebP (46 KB, 94% menos que el PNG original); sustituye las imágenes de Unsplash del carrusel.
 - `ProductCarousel.tsx`: lee los productos desde `src/data/products.ts`, muestra material y plazo, y oculta las flechas cuando hay un solo producto.
 - `Docs/CONTENT.md`: inventario actualizado con el producto real, su fotografía y los datos de contacto vigentes.
 - `src/pages/index.astro`: cotización por WhatsApp con mensaje prellenado, correo y dirección reales; eliminados los enlaces falsos a redes sociales.
@@ -37,6 +37,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Etapa 03 — Backend con PocketBase: colecciones y reglas de acceso creadas y verificadas.
 - Etapa 04 — Catálogo de productos: producto real y fotografía propia, validados en navegador.
 - Etapa 05 — Contacto y conversión comercial: WhatsApp, correo y dirección reales, validados en navegador.
+- Etapa 06 — Adaptabilidad y optimización: imagen WebP y revisión en tres tamaños de pantalla.
 
 **Validación**
 
@@ -48,6 +49,8 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Imagen del producto servida con HTTP 200 en el servidor de desarrollo; validación visual confirmada por César con Ctrl+F5.
 - `npm run build` correcto tras el cambio de contacto: en `dist/index.html` están los datos reales y no quedan datos de demostración ni `href="#"`.
 - Enlace `wa.me` comprobado con HTTP 302 de redirección; sección de contacto validada visualmente por César con Ctrl+F5.
+- Auditoría del HTML generado: 1 `h1`, jerarquía de encabezados correcta, 5 imágenes con `alt` y carga diferida, y 5 anclas internas con destino existente.
+- Medición local: página 81 KB en 372 ms e imagen WebP 46 KB en 98 ms; validación visual en escritorio, tableta y teléfono confirmada por César con Ctrl+F5.
 
 ### 2026-11-24 — 1.2.2
 
