@@ -33,7 +33,7 @@ Todos los comandos se ejecutan dentro de `woodworking/`.
 |OP-08|Comandos de Astro|`npm run astro -- <comando>`, por ejemplo `npm run astro -- check`.|
 |OP-09|Arrancar PocketBase|`.\backend\pocketbase.exe serve --http=127.0.0.1:8090`. Ver sección 7.|
 |OP-10|Crear colecciones|`powershell -ExecutionPolicy Bypass -File .\scripts\setup-pocketbase.ps1`. Pide credenciales al ejecutarse.|
-|OP-11|Publicar|`git push origin main` dispara `.github/workflows/deploy.yml` hacia GitHub Pages.|
+|OP-11|Publicar|Vercel detecta el proyecto Astro y compila con `npm run build`; cada push a `main` despliega `https://16wood.vercel.app/`.|
 
 **No disponibles:** este proyecto no tiene los scripts `npm test`, `npm run lint` ni `npm run format`. No ejecutarlos como si existieran.
 
@@ -90,17 +90,17 @@ Instancia de desarrollo para la Etapa 03 del `Docs/ROADMAP.md`. Versión verific
 
 ## 8. Publicación
 
-Sitio estático publicado en GitHub Pages (Etapa 07 del `Docs/ROADMAP.md`).
+Sitio estático publicado en Vercel (Etapa 07 del `Docs/ROADMAP.md`).
 
 |Elemento|Valor|
 |---|---|
-|URL pública|`https://cesarcg1-dev.github.io/16Wood/`|
-|URL local con la ruta base|`http://localhost:4321/16Wood/`|
-|Configuración|`site` y `base: '/16Wood'` en `astro.config.mjs`.|
-|Despliegue|`.github/workflows/deploy.yml`, disparado por `git push origin main` (OP-11).|
-|Archivos de soporte|`public/robots.txt`, `public/sitemap.xml`, `public/favicon.svg` y `public/.nojekyll`.|
+|URL pública|`https://16wood.vercel.app/`|
+|URL local|`http://localhost:4321/`|
+|Configuración|`site: 'https://16wood.vercel.app'` en `astro.config.mjs`; sin ruta base.|
+|Despliegue|Proyecto de Vercel conectado a `main`; compila con `npm run build` y sirve `dist/`.|
+|Archivos de soporte|`public/robots.txt`, `public/sitemap.xml` y `public/favicon.svg`.|
 
-En GitHub se debe tener **Settings → Pages → Source: GitHub Actions**. El despliegue no sube PocketBase: la web publicada no depende del backend local.
+El despliegue no sube PocketBase: la web publicada es estática y no depende del backend local. En Vercel, el directorio de salida es `dist/` y el framework detectado es Astro.
 
 ---
 

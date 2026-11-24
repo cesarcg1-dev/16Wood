@@ -20,7 +20,7 @@ El código actual solo contiene la versión mínima de `src/pages/index.astro`. 
 |Descripción|Diseño y fabricación de productos y proyectos personalizados en madera con tecnología CNC.|Igual que la actual.|
 |Idioma|`es`|`es`|
 |Favicon|`public/favicon.svg`, enlazado desde `Layout.astro`.|Sin favicon propio.|
-|URL pública|`https://cesarcg1-dev.github.io/16Wood/`.|Sin URL de publicación.|
+|URL pública|`https://16wood.vercel.app/`.|Sin URL de publicación.|
 
 La marca comercial definitiva está pendiente de confirmación. La documentación v1.0 usaba «Lignare»; no debe asumirse como nombre vigente.
 
