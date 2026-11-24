@@ -31,7 +31,7 @@ La página implementada en `src/pages/index.astro` usa los textos del prototipo 
 - Productos destacados, servicios CNC, proyectos, proceso de cuatro pasos y banner de contacto.
 - Pie de página: «© 2026 16Wood. Todos los derechos reservados.».
 
-Los datos de contacto siguen siendo los del prototipo: `+52 55 1234 5678` y `hola@woodworking.com`. No hay catálogo completo ni datos de productos reales.
+Los datos de contacto siguen siendo los del prototipo: `+52 55 1234 5678` y `hola@woodworking.com`. El catálogo tiene un producto real: «Caja joyero»; la lista completa está pendiente.
 
 ## 4. Encabezado y navegación del prototipo
 
@@ -57,16 +57,13 @@ Diapositiva 2:
 - Texto: de la idea inicial a la pieza terminada, cuidando diseño, materiales y detalles.
 - Acciones: «Ver proyectos →» y «Cuéntanos tu idea».
 
-## 6. Productos destacados del prototipo
+## 6. Productos destacados
 
-|Producto|Categoría|Precio|
-|---|---|---|
-|Charola de nogal|Decoración|Consultar precio|
-|Panel decorativo CNC|Decoración|Consultar precio|
-|Reloj de madera|Accesorios|Consultar precio|
-|Accesorios para el hogar|Decoración|Consultar precio|
+|Referencia|Nombre|Categoría|Material|Precio|Plazo de entrega|
+|---|---|---|---|---|---|
+|pza 1|Caja joyero|Hogar|Caoba|Consultar precio|30 días|
 
-Las imágenes son URLs de Unsplash. La documentación v1.0 describía 12 productos y 6 categorías en `src/data/products.ts`; ese archivo no existe en el código actual.
+La fuente actual es `src/data/products.ts` y la fotografía propia está en `public/images/products/caja-joyero.png`. Los cuatro productos de demostración del prototipo (Charola de nogal, Panel decorativo CNC, Reloj de madera y Accesorios para el hogar) quedaron sustituidos. Las categorías definitivas se ampliarán cuando haya más productos reales.
 
 ## 7. Servicios CNC del prototipo
 
@@ -108,7 +105,7 @@ Marca «Woodworking / DISEÑO EN MADERA», enlaces a Inicio, Productos, Servicio
 
 ## 12. Imágenes y recursos visuales
 
-- No hay fotografías propias en `public/`; solo la referencia externa `Precisión CNC y belleza en madera.png`.
+- La fotografía propia del catálogo es `public/images/products/caja-joyero.png`; el resto de las secciones sigue usando imágenes de Unsplash.
 - El prototipo usa imágenes de Unsplash cargadas por internet.
 - La captura `Precisión CNC y belleza en madera.png` muestra la página renderizada del prototipo.
 

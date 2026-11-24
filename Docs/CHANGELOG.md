@@ -17,12 +17,16 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 **Cambios**
 
 - Etapa 03 «Backend con PocketBase» agregada al `Docs/ROADMAP.md`; antiguas etapas 03 a 07 renumeradas a 04 a 08.
-- Etapas 01, 02 y 03 marcadas como completadas; etapas 04 a 08 siguen pendientes.
+- Etapas 01 a 04 marcadas como completadas; etapas 05 a 08 siguen pendientes.
 - `Docs/MEJORAS.md`: mejoras en estado Pendiente y correspondencia ajustada a las 8 etapas.
 - `README.md` y `Docs/ROADMAP.md`: regla de orden de trabajo; el roadmap se termina antes de atender las mejoras.
 - `RUNBOOK.md`: sección «PocketBase local», operaciones OP-09 y OP-10, y referencia a los datos reales pendientes.
 - `scripts/setup-pocketbase.ps1`: crea las tres colecciones y pide credenciales al ejecutarse; no guarda secretos.
 - `DATOSREALES.md`: datos reales de contacto, pendientes de aplicar en la página (M-01).
+- `src/data/products.ts`: producto real «Caja joyero» con los campos de la colección `productos` de PocketBase; referencia interna `pza 1`.
+- `public/images/products/caja-joyero.png`: fotografía propia del producto; sustituye las imágenes de Unsplash del carrusel.
+- `ProductCarousel.tsx`: lee los productos desde `src/data/products.ts`, muestra material y plazo, y oculta las flechas cuando hay un solo producto.
+- `Docs/CONTENT.md`: inventario actualizado con el producto real y su fotografía.
 - Versiones de la documentación alineadas a 1.3.0.
 
 **Etapas afectadas**
@@ -30,6 +34,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Etapa 01 — Estabilización: completada y validada.
 - Etapa 02 — Diseño y presentación: secciones alineadas al prototipo y validación visual confirmada.
 - Etapa 03 — Backend con PocketBase: colecciones y reglas de acceso creadas y verificadas.
+- Etapa 04 — Catálogo de productos: producto real y fotografía propia, validados en navegador.
 
 **Validación**
 
@@ -37,6 +42,8 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `npm run build` correcto: 1 página generada, sin errores.
 - PocketBase 0.42.3: `/api/health` y SDK correctos; colecciones y reglas comprobadas por API pública.
 - Sintaxis de `scripts/setup-pocketbase.ps1` verificada sin ejecutar el script desde esta sesión.
+- `npm run build` correcto tras el cambio del catálogo: en `dist/index.html` aparece «Caja joyero» y ya no aparecen los productos de demostración.
+- Imagen del producto servida con HTTP 200 en el servidor de desarrollo; validación visual confirmada por César con Ctrl+F5.
 
 ### 2026-11-24 — 1.2.2
 

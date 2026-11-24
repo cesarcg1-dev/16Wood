@@ -2,7 +2,7 @@
 
 **Proyecto:** 16Wood  
 **Versión:** 1.3.0  
-**Estado general:** Etapas 01 a 03 completadas; etapas 04 a 08 pendientes; revisión ordenada
+**Estado general:** Etapas 01 a 04 completadas; etapas 05 a 08 pendientes; revisión ordenada
 
 ## 1. Objetivo
 
@@ -26,7 +26,7 @@ El proyecto busca contar con una presencia digital atractiva que permita mostrar
 |01|Estabilización del proyecto|Alta|Completada|
 |02|Diseño y presentación de la landing page|Alta|Completada|
 |03|Backend con PocketBase|Media|Completada|
-|04|Catálogo de productos|Alta|Pendiente|
+|04|Catálogo de productos|Alta|Completada|
 |05|Contacto y conversión comercial|Alta|Pendiente|
 |06|Adaptabilidad y optimización|Alta|Pendiente|
 |07|SEO y publicación|Media|Pendiente|
@@ -121,6 +121,8 @@ Actividades:
 - Verificar la presentación del catálogo en distintos tamaños de pantalla.
 
 **Criterio de aceptación:** los productos deben mostrarse correctamente, con información confiable, fotografías adecuadas y una navegación sencilla.
+
+**Estado:** completada. Revisada el 2026-11-24: los cuatro productos de demostración fueron sustituidos por «Caja joyero» con fotografía propia; comprobado el HTML generado, la imagen servida con HTTP 200 y la validación visual en navegador con Ctrl+F5.
 
 ### ETAPA 05 — Contacto y conversión comercial
 
