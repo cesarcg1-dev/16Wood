@@ -1,0 +1,217 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/home/SiteHeader.tsx";
+import HeroCarousel from "../components/home/HeroCarousel.tsx";
+import ProductCarousel from "../components/home/ProductCarousel.tsx";
+---
+
+<Layout>
+  <SiteHeader client:load />
+  <HeroCarousel client:load />
+
+  <main>
+    <ProductCarousel client:load />
+
+    <section
+      id="servicios"
+      class="grid min-h-[310px] grid-cols-[42%_58%] bg-[#f3e7d9] max-[680px]:grid-cols-1"
+    >
+      <div
+        role="img"
+        aria-label="Trabajo de precisión en madera con máquina CNC"
+        class="min-h-[310px] bg-cover bg-center max-[680px]:min-h-[230px]"
+        style="background-image: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&q=85')"
+      ></div>
+
+      <div class="grid grid-cols-[1.4fr_1fr] items-center gap-7 px-[7%] py-[35px] max-[900px]:gap-[15px] max-[900px]:px-[5%] max-[680px]:grid-cols-1 max-[680px]:gap-[25px] max-[680px]:py-7">
+        <div>
+          <p class="mb-[10px] text-[10px] font-bold tracking-[1.6px] text-copper">
+            <span class="mr-[7px] inline-block h-px w-6 bg-current align-middle"></span>
+            SERVICIOS CNC
+          </p>
+          <h2 class="m-0 font-serif text-[clamp(25px,2.5vw,34px)] font-semibold leading-[1.15] tracking-[-0.6px]">
+            Fabricación personalizada<br />con tecnología de punta
+          </h2>
+          <p class="my-[12px_0_18px] max-w-[390px] text-xs leading-[1.6]">
+            Desde cortes precisos hasta grabados detallados, convertimos tus ideas en piezas únicas.
+          </p>
+          <a
+            href="#contacto"
+            class="inline-flex h-[39px] items-center justify-center rounded-full bg-copper px-5 text-xs font-semibold text-white transition-all hover:bg-copper/90"
+          >
+            Conocer servicios <span class="ml-[10px] text-base">→</span>
+          </a>
+        </div>
+
+        <ul class="m-0 grid gap-[17px] border-l border-[#ddc6af] py-0 pl-6 max-[900px]:pl-[15px] max-[680px]:grid-cols-2 max-[680px]:gap-x-[10px] max-[680px]:gap-y-[14px] max-[680px]:border-l-0 max-[680px]:border-t max-[680px]:pb-0 max-[680px]:pt-5">
+          <li class="flex items-center gap-3 text-[11px] max-[680px]:text-[10px]">
+            <span class="grid size-7 place-items-center rounded-full bg-[#e5c5a2] text-[17px] text-[#71452b]">✳</span>
+            Corte CNC en madera
+          </li>
+          <li class="flex items-center gap-3 text-[11px] max-[680px]:text-[10px]">
+            <span class="grid size-7 place-items-center rounded-full bg-[#e5c5a2] text-[17px] text-[#71452b]">⌘</span>
+            Grabado y relieve
+          </li>
+          <li class="flex items-center gap-3 text-[11px] max-[680px]:text-[10px]">
+            <span class="grid size-7 place-items-center rounded-full bg-[#e5c5a2] text-[17px] text-[#71452b]">◉</span>
+            Piezas personalizadas
+          </li>
+          <li class="flex items-center gap-3 text-[11px] max-[680px]:text-[10px]">
+            <span class="grid size-7 place-items-center rounded-full bg-[#e5c5a2] text-[17px] text-[#71452b]">▧</span>
+            Paneles decorativos
+          </li>
+          <li class="flex items-center gap-3 text-[11px] max-[680px]:text-[10px]">
+            <span class="grid size-7 place-items-center rounded-full bg-[#e5c5a2] text-[17px] text-[#71452b]">◇</span>
+            Diseños especiales
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proyectos" class="px-[4.4%] pb-7 pt-[27px] max-[680px]:px-[5%]">
+      <div class="mb-4 flex items-end justify-between gap-3 max-[680px]:items-start">
+        <div>
+          <p class="mb-[10px] text-[10px] font-bold tracking-[1.6px] text-copper">
+            <span class="mr-[7px] inline-block h-px w-6 bg-current align-middle"></span>
+            NUESTROS PROYECTOS
+          </p>
+          <h2 class="m-0 font-serif text-[clamp(25px,2.5vw,34px)] font-semibold leading-[1.15] tracking-[-0.6px] max-[680px]:text-[27px]">
+            Ideas hechas realidad
+          </h2>
+        </div>
+        <a href="#contacto" class="mb-[6px] text-[11px] max-[680px]:mt-5 max-[680px]:whitespace-nowrap max-[680px]:text-[10px]">
+          Ver galería completa <span class="ml-[5px] text-base">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-4 gap-3 max-[680px]:grid-cols-2 max-[680px]:gap-[9px]">
+        <a
+          href="#contacto"
+          class="group relative aspect-[1.48] overflow-hidden rounded-sm bg-sand max-[680px]:aspect-[1.25]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=85"
+            alt="Mesa de madera en comedor"
+            loading="lazy"
+            class="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(25,15,9,.65)] to-transparent px-3 pb-[10px] pt-[25px] text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 max-[680px]:opacity-100">Mobiliario a medida</span>
+        </a>
+        <a
+          href="#contacto"
+          class="group relative aspect-[1.48] overflow-hidden rounded-sm bg-sand max-[680px]:aspect-[1.25]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=85"
+            alt="Interior con panel decorativo"
+            loading="lazy"
+            class="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(25,15,9,.65)] to-transparent px-3 pb-[10px] pt-[25px] text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 max-[680px]:opacity-100">Paneles decorativos</span>
+        </a>
+        <a
+          href="#contacto"
+          class="group relative aspect-[1.48] overflow-hidden rounded-sm bg-sand max-[680px]:aspect-[1.25]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"
+            alt="Detalle de decoración en madera"
+            loading="lazy"
+            class="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(25,15,9,.65)] to-transparent px-3 pb-[10px] pt-[25px] text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 max-[680px]:opacity-100">Detalles especiales</span>
+        </a>
+        <a
+          href="#contacto"
+          class="group relative aspect-[1.48] overflow-hidden rounded-sm bg-sand max-[680px]:aspect-[1.25]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+            alt="Estantería de madera en sala"
+            loading="lazy"
+            class="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(25,15,9,.65)] to-transparent px-3 pb-[10px] pt-[25px] text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 max-[680px]:opacity-100">Diseño de interiores</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-[1.15fr_repeat(4,1fr)] items-center bg-[#f1e3d3] px-[4.4%] py-[25px] max-[680px]:grid-cols-2 max-[680px]:gap-y-[18px] max-[680px]:px-[5%]">
+      <div class="pr-5 max-[680px]:col-span-2 max-[680px]:pb-[5px] max-[680px]:pr-0">
+        <p class="mb-[10px] text-[10px] font-bold tracking-[1.6px] text-copper">
+          <span class="mr-[7px] inline-block h-px w-6 bg-current align-middle"></span>
+          CÓMO TRABAJAMOS
+        </p>
+        <h2 class="m-0 font-serif text-[27px] font-semibold leading-[1.15] tracking-[-0.6px] max-[680px]:text-[25px]">
+          Un proceso<br class="max-[680px]:hidden" /> simple y claro
+        </h2>
+      </div>
+      <div class="flex min-h-[82px] flex-col items-center justify-center gap-[7px] border-l border-[#d8bea5] text-center max-[680px]:min-h-0 max-[680px]:border-l-0 max-[680px]:border-t max-[680px]:pt-3">
+        <span class="text-[26px] text-[#8c572f]">▤</span>
+        <p class="m-0 text-xs leading-[1.4]">Nos cuentas<br />tu idea</p>
+      </div>
+      <div class="flex min-h-[82px] flex-col items-center justify-center gap-[7px] border-l border-[#d8bea5] text-center max-[680px]:min-h-0 max-[680px]:border-l max-[680px]:border-t max-[680px]:pt-3">
+        <span class="text-[26px] text-[#8c572f]">▣</span>
+        <p class="m-0 text-xs leading-[1.4]">Preparamos<br />la propuesta</p>
+      </div>
+      <div class="flex min-h-[82px] flex-col items-center justify-center gap-[7px] border-l border-[#d8bea5] text-center max-[680px]:min-h-0 max-[680px]:border-l-0 max-[680px]:border-t max-[680px]:pt-3">
+        <span class="text-[26px] text-[#8c572f]">✥</span>
+        <p class="m-0 text-xs leading-[1.4]">Fabricamos<br />con precisión</p>
+      </div>
+      <div class="flex min-h-[82px] flex-col items-center justify-center gap-[7px] border-l border-[#d8bea5] text-center max-[680px]:min-h-0 max-[680px]:border-l max-[680px]:border-t max-[680px]:pt-3">
+        <span class="text-[26px] text-[#8c572f]">◇</span>
+        <p class="m-0 text-xs leading-[1.4]">Entregamos<br />tu proyecto</p>
+      </div>
+    </section>
+
+    <section
+      id="contacto"
+      class="grid grid-cols-[1.5fr_auto_1fr] items-center gap-[35px] px-[4.4%] py-9 text-white max-[680px]:grid-cols-1 max-[680px]:gap-5 max-[680px]:px-[6%]"
+      style="background-image: linear-gradient(rgba(50,25,12,.7), rgba(50,25,12,.78)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80'); background-position: center; background-size: cover; background-color: #60371f"
+    >
+      <div>
+        <h2 class="m-0 mb-[5px] font-serif text-[clamp(25px,3vw,36px)] font-semibold max-[680px]:text-[29px]">
+          ¿Tienes un proyecto en mente?
+        </h2>
+        <p class="m-0 text-xs">Cuéntanos qué necesitas y encontraremos la mejor forma de fabricarlo.</p>
+      </div>
+      <a
+        href="mailto:hola@woodworking.com?subject=Solicitud%20de%20cotizaci%C3%B3n"
+        class="inline-flex h-11 items-center justify-center rounded-full bg-[#f5e3cc] px-[21px] text-xs font-semibold text-[#3a2113] transition-all hover:bg-[#f5e3cc]/90 max-[680px]:justify-self-start"
+      >
+        Solicitar cotización <span class="ml-[10px] text-base">→</span>
+      </a>
+      <div class="grid gap-[9px] border-l border-white/45 py-0 pl-[30px] text-[13px] max-[680px]:border-l-0 max-[680px]:border-t max-[680px]:border-white/40 max-[680px]:pb-0 max-[680px]:pl-0 max-[680px]:pt-[18px]">
+        <a href="tel:+525512345678" class="flex items-center gap-[10px]">
+          ☎ <span class="text-[11px]">+52 55 1234 5678</span>
+        </a>
+        <a href="mailto:hola@woodworking.com" class="flex items-center gap-[10px]">
+          ✉ <span class="text-[11px]">hola@woodworking.com</span>
+        </a>
+        <div class="mt-1 flex gap-3">
+          <a href="#" aria-label="Facebook" class="grid size-[22px] place-items-center rounded-full border border-white/80 text-xs">f</a>
+          <a href="#" aria-label="Instagram" class="grid size-[22px] place-items-center rounded-full border border-white/80 text-xs">◎</a>
+          <a href="#" aria-label="YouTube" class="grid size-[22px] place-items-center rounded-full border border-white/80 text-xs">▶</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="flex min-h-[90px] flex-wrap items-center justify-between gap-6 px-[4.4%] py-[18px] bg-[#fbf6ef] max-[680px]:px-[5%]">
+    <a href="#inicio" class="flex items-center gap-3" aria-label="16Wood, inicio">
+      <span aria-hidden="true" class="grid size-[42px] place-items-center rounded-full border border-[#a56c43] text-[31px] leading-none text-copper rotate-180">♧</span>
+      <span class="flex flex-col leading-[1.05]">
+        <strong class="font-serif text-xl tracking-tight">16Wood</strong>
+        <small class="mt-[5px] text-[8px] tracking-[2.2px]">DISEÑO EN MADERA</small>
+      </span>
+    </a>
+    <nav aria-label="Navegación de pie de página" class="flex flex-wrap gap-[22px] max-[680px]:order-3 max-[680px]:w-full max-[680px]:gap-3">
+      <a href="#inicio" class="text-[9px]">Inicio</a>
+      <a href="#productos" class="text-[9px]">Productos</a>
+      <a href="#servicios" class="text-[9px]">Servicios CNC</a>
+      <a href="#proyectos" class="text-[9px]">Proyectos</a>
+      <a href="#contacto" class="text-[9px]">Contacto</a>
+    </nav>
+    <small class="whitespace-nowrap text-[9px] text-muted-foreground max-[680px]:ml-auto">© 2026 16Wood. Todos los derechos reservados.</small>
+  </footer>
+</Layout>

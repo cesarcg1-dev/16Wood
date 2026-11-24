@@ -1,0 +1,19 @@
+# --- PocketBase ---
+# Datos locales de la base de datos (Nunca subir)
+/backend/pb_data/
+
+# Ejecutable (mejor descargarlo según el SO de cada dev)
+/backend/pocketbase.exe
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+
+# --- Sistema / Editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
