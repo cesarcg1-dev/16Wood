@@ -38,6 +38,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `RUNBOOK.md`: sección «Panel de contenido» y operación OP-12.
 - M-18: canonical, Open Graph y Twitter, y `JSON-LD` de `LocalBusiness` en `src/layouts/Layout.astro`, con datos de `DATOSREALES.md`.
 - `Docs/CONTENT.md`: canonical, etiquetas sociales y datos estructurados añadidos al inventario de metadatos.
+- `Docs/MEJORAS.md`: sección 8 con el plan de SEO en 7 pasos; paso 1 marcado como Hecho (M-18) y pasos 2 a 7 En pausa hasta sustituir las imágenes de mockup por fotos propias con datos reales (M-02 y M-03).
 - Versiones de la documentación alineadas a 1.3.0.
 
 **Etapas afectadas**

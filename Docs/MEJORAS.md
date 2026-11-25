@@ -10,6 +10,8 @@ Aquí se registran las mejoras detectadas al revisar el código y la documentaci
 
 Estado actual: la mayoría figuran como **Pendiente**; M-18 y M-24 quedaron resueltas y M-27 está **En revisión**. El trabajo avanzó primero por las etapas de `Docs/ROADMAP.md`; esta lista se atiende en orden, empezando por M-01. Queda pendiente revisar y actualizar los estados del resto de las mejoras según el código vigente.
 
+**Prioridad actual:** antes de seguir con el SEO (sección 8, pasos 2 a 7), hay que sustituir las imágenes de mockup por fotografías propias y completar los datos reales del catálogo. Los pasos 2 a 7 están **En pausa** hasta que eso termine.
+
 No se modifica código solo por aparecer en esta lista. Cada cambio debe tener una instrucción clara y terminar en una prueba, por ejemplo `npm run build`.
 
 Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
@@ -19,8 +21,8 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |ID|Mejora|Prioridad|Estado|
 |---|---|---|---|
 |M-01|Sustituir los datos de contacto de demostración del prototipo (+52 55 1234 5678, hola@woodworking.com) por datos reales.|Alta|Pendiente|
-|M-02|Sustituir las imágenes de Unsplash del prototipo por fotografías propias optimizadas.|Alta|Pendiente|
-|M-03|Definir productos, categorías, precios, materiales y plazos reales.|Alta|Pendiente|
+|M-02|Sustituir las imágenes de Unsplash del prototipo por fotografías propias optimizadas. Actualmente todas las imágenes del carrusel son imágenes de mockup; hay que cambiarlas por fotos propias con datos reales antes de reanudar el SEO.|Alta|Pendiente|
+|M-03|Definir productos, categorías, precios, materiales y plazos reales. Hoy los registros del catálogo son de muestra; se necesitan datos reales junto con las fotografías propias de M-02.|Alta|Pendiente|
 |M-04|Confirmar la marca comercial en pantalla. El proyecto ya es 16Wood, la carpeta sigue siendo `woodworking/` y la página implementada usa 16Wood.|Alta|Pendiente|
 |M-05|Revisar o eliminar las cifras, valoraciones y testimonios heredados de la documentación v1.0.|Media|Pendiente|
 
@@ -78,6 +80,22 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |06 — Adaptabilidad y optimización|M-11, M-12, M-13|
 |07 — SEO y publicación|M-05, M-17, M-18, M-19, M-20|
 |08 — Mejoras posteriores|M-04, M-21, M-22, M-24, M-27|
+
+## 8. Plan de SEO para que los buscadores encuentren la página
+
+Trabajo acordado el 2026-11-25. El paso 1 quedó implementado en el commit `b4b3679`. Los pasos 2 a 7 se ponen **En pausa** hasta tener fotografías propias y datos reales (M-02 y M-03).
+
+|Paso|Trabajo|Estado|
+|---|---|---|
+|1|Canonical, Open Graph, Twitter y `JSON-LD` de `LocalBusiness` en `Layout.astro`, con los datos de `DATOSREALES.md` (M-18).|Hecho|
+|2|Escribir los textos `alt` reales de las 7 fotos del carrusel; hoy solo dicen `img1`, `img3`, etc.|En pausa|
+|3|Enviar el sitemap a Google Search Console y verificar la propiedad del sitio.|En pausa|
+|4|Enviar el sitemap a Bing Webmaster Tools.|En pausa|
+|5|Añadir `lastmod` a `sitemap.xml` con la fecha de actualización real.|En pausa|
+|6|Definir y configurar el dominio propio, si se decide dar el salto (M-19).|En pausa|
+|7|Verificar la indexación en Google y Bing con `site:16wood.vercel.app`.|En pausa|
+
+Nota: el 100 de Lighthouse en SEO significa que pasa las comprobaciones automáticas, no que el sitio ya esté indexado. Los pasos 2 y 5 dependen de las fotos y los datos reales; los pasos 3, 4, 6 y 7 requieren acciones en cuentas externas de César.
 
 ---
 
