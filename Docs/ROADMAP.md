@@ -2,7 +2,7 @@
 
 **Proyecto:** 16Wood  
 **Versión:** 1.3.0  
-**Estado general:** Etapas 01 a 06 completadas; etapas 07 y 08 pendientes; revisión ordenada
+**Estado general:** Etapas 01 a 07 completadas; etapa 08 pendiente; revisión ordenada
 
 ## 1. Objetivo
 
@@ -29,7 +29,7 @@ El proyecto busca contar con una presencia digital atractiva que permita mostrar
 |04|Catálogo de productos|Alta|Completada|
 |05|Contacto y conversión comercial|Alta|Completada|
 |06|Adaptabilidad y optimización|Alta|Completada|
-|07|SEO y publicación|Media|Pendiente|
+|07|SEO y publicación|Media|Completada|
 |08|Mejoras posteriores|Baja|Pendiente|
 
 ## 4. Desarrollo por etapas
@@ -170,6 +170,8 @@ Actividades:
 - Verificar funcionamiento en producción.
 
 **Criterio de aceptación:** el sitio debe estar publicado, ser accesible desde su dominio y contar con sus elementos básicos de posicionamiento y presentación.
+
+**Estado:** completada. Revisada el 2026-11-24: título y descripción vigentes, `favicon.svg` enlazado, `robots.txt` y `sitemap.xml` apuntando a `https://16wood.vercel.app/`, y sitio desplegado en Vercel sin ruta base. Producción verificada con HTTP 200 y funcionamiento confirmado por César.
 
 ### ETAPA 08 — Mejoras posteriores
 

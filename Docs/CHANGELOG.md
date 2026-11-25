@@ -17,7 +17,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 **Cambios**
 
 - Etapa 03 «Backend con PocketBase» agregada al `Docs/ROADMAP.md`; antiguas etapas 03 a 07 renumeradas a 04 a 08.
-- Etapas 01 a 06 marcadas como completadas; etapas 07 y 08 siguen pendientes.
+- Etapas 01 a 07 marcadas como completadas; etapa 08 sigue pendiente.
 - `Docs/MEJORAS.md`: mejoras en estado Pendiente y correspondencia ajustada a las 8 etapas.
 - `README.md` y `Docs/ROADMAP.md`: regla de orden de trabajo; el roadmap se termina antes de atender las mejoras.
 - `RUNBOOK.md`: sección «PocketBase local», operaciones OP-09 y OP-10, y referencia a los datos de contacto ya aplicados.
@@ -28,6 +28,10 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `ProductCarousel.tsx`: lee los productos desde `src/data/products.ts`, muestra material y plazo, y oculta las flechas cuando hay un solo producto.
 - `Docs/CONTENT.md`: inventario actualizado con el producto real, su fotografía y los datos de contacto vigentes.
 - `src/pages/index.astro`: cotización por WhatsApp con mensaje prellenado, correo y dirección reales; eliminados los enlaces falsos a redes sociales.
+- `public/favicon.svg`, `public/robots.txt` y `public/sitemap.xml`: icono real y archivos de posicionamiento apuntando a `https://16wood.vercel.app/`.
+- `astro.config.mjs`: `site` configurado para Vercel y sin ruta base; retirados el flujo de GitHub Pages y `public/.nojekyll`.
+- `RUNBOOK.md`: sección «Publicación», operación OP-11 y URL local `http://localhost:4321/`.
+- `Docs/CONTENT.md`: URL pública y favicon añadidos al inventario de identidad y metadatos.
 - Versiones de la documentación alineadas a 1.3.0.
 
 **Etapas afectadas**
@@ -38,6 +42,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Etapa 04 — Catálogo de productos: producto real y fotografía propia, validados en navegador.
 - Etapa 05 — Contacto y conversión comercial: WhatsApp, correo y dirección reales, validados en navegador.
 - Etapa 06 — Adaptabilidad y optimización: imagen WebP y revisión en tres tamaños de pantalla.
+- Etapa 07 — SEO y publicación: favicon, `robots.txt`, `sitemap.xml` y sitio publicado en `https://16wood.vercel.app/`.
 
 **Validación**
 
@@ -51,6 +56,9 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Enlace `wa.me` comprobado con HTTP 302 de redirección; sección de contacto validada visualmente por César con Ctrl+F5.
 - Auditoría del HTML generado: 1 `h1`, jerarquía de encabezados correcta, 5 imágenes con `alt` y carga diferida, y 5 anclas internas con destino existente.
 - Medición local: página 81 KB en 372 ms e imagen WebP 46 KB en 98 ms; validación visual en escritorio, tableta y teléfono confirmada por César con Ctrl+F5.
+- `npm run build` correcto tras la configuración de Vercel: 1 página, sin rutas `/16Wood/` en `dist/index.html`, con `favicon.svg` y la imagen WebP en la raíz.
+- HTTP 200 en `http://localhost:4321/` para la página, el favicon, la imagen, `robots.txt` y `sitemap.xml`.
+- Producción verificada el 2026-11-24: `https://16wood.vercel.app/` responde HTTP 200 sin rutas `/16Wood/`; `robots.txt` y `sitemap.xml` apuntan a Vercel. Funcionamiento confirmado por César.
 
 ### 2026-11-24 — 1.2.2
 
