@@ -1,0 +1,56 @@
+media:
+  input: public/images/products
+  output: /images/products
+  extensions:
+    - jpg
+    - jpeg
+    - png
+    - webp
+  categories:
+    - image
+
+content:
+  - name: catalogo
+    label: Catálogo de productos
+    type: file
+    path: src/data/products.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: productos
+        label: Productos
+        type: object
+        list:
+          collapsible: true
+        fields:
+          - name: referencia
+            label: Referencia
+            type: string
+          - name: nombre
+            label: Nombre
+            type: string
+          - name: categoria
+            label: Categoría
+            type: string
+          - name: descripcion
+            label: Descripción
+            type: text
+          - name: material
+            label: Material
+            type: string
+          - name: precio
+            label: Precio
+            type: string
+          - name: plazo_entrega
+            label: Plazo de entrega
+            type: string
+          - name: imagen
+            label: Imagen
+            type: image
+          - name: destacado
+            label: Producto destacado
+            type: boolean
+          - name: alt
+            label: Texto alternativo de imagen
+            type: string
