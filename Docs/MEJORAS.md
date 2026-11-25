@@ -8,7 +8,7 @@
 
 Aquí se registran las mejoras detectadas al revisar el código y la documentación. Cada mejora se marca como **Pendiente**, **En revisión** o **Hecha**.
 
-Estado actual: todas las mejoras figuran como **Pendiente**. El trabajo avanza primero por las etapas de `Docs/ROADMAP.md`; esta lista se atiende cuando terminen todas las etapas y entonces se revisa en orden, empezando por M-01.
+Estado actual: la mayoría figuran como **Pendiente**; M-24 quedó resuelta y M-27 está **En revisión**. El trabajo avanzó primero por las etapas de `Docs/ROADMAP.md`; esta lista se atiende en orden, empezando por M-01. Queda pendiente revisar y actualizar los estados del resto de las mejoras según el código vigente.
 
 No se modifica código solo por aparecer en esta lista. Cada cambio debe tener una instrucción clara y terminar en una prueba, por ejemplo `npm run build`.
 
@@ -45,6 +45,7 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |M-14|Cargar DM Sans y Playfair Display de forma optimizada en el proyecto Astro.|Media|Pendiente|
 |M-15|No versionar archivos locales de depuración (`debug.log`) ni configuraciones personales del editor; revisar `.gitignore`.|Baja|Pendiente|
 |M-16|Revisar la configuración duplicada en la raíz (`package.json` y `astro.config.mjs` fuera de `woodworking/`).|Baja|Pendiente|
+|M-27|Probar un CMS basado en git (Decap CMS) para editar productos desde el navegador, sin base de datos ni costo de backend.|Media|En revisión|
 
 ## 5. Publicación y SEO
 
@@ -62,7 +63,7 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |M-21|Mantener `Docs/CHANGELOG.md` con una entrada por cada cambio relevante.|Media|Pendiente|
 |M-22|Actualizar la documentación al nombre 16Wood y al prototipo adjunto.|Alta|Pendiente|
 |M-23|Eliminar o fusionar `ROADMAP.md` y `ESTILOS.md` vacíos en la raíz de `woodworking/`, que duplican a `Docs/`.|Baja|Pendiente|
-|M-24|Registrar la decisión final sobre Supabase, Vercel y panel administrativo; hoy solo es una propuesta en los archivos de apoyo.|Baja|Pendiente|
+|M-24|Registrar la decisión final sobre Supabase, Vercel y panel administrativo: sin Supabase, publicación en Vercel y panel basado en git (M-27).|Baja|Hecha|
 |M-26|Coordinar `README.md` y `RUNBOOK.md`: un solo README en la raíz, procedimientos reales y versiones alineadas.|Alta|Pendiente|
 
 ## 7. Relación con el ROADMAP
@@ -76,7 +77,7 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |05 — Contacto y conversión|M-01, M-05, M-10|
 |06 — Adaptabilidad y optimización|M-11, M-12, M-13|
 |07 — SEO y publicación|M-05, M-17, M-18, M-19, M-20|
-|08 — Mejoras posteriores|M-04, M-21, M-22|
+|08 — Mejoras posteriores|M-04, M-21, M-22, M-24, M-27|
 
 ---
 

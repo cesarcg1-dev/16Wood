@@ -32,6 +32,10 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `astro.config.mjs`: `site` configurado para Vercel y sin ruta base; retirados el flujo de GitHub Pages y `public/.nojekyll`.
 - `RUNBOOK.md`: sección «Publicación», operación OP-11 y URL local `http://localhost:4321/`.
 - `Docs/CONTENT.md`: URL pública y favicon añadidos al inventario de identidad y metadatos.
+- M-27: panel Decap CMS 3.18.0 basado en git, sin base de datos; M-24 cerrada (sin Supabase, Vercel y panel definidos).
+- `src/data/products.json`: contenido del catálogo editable desde el panel; `src/data/products.ts` solo arma las rutas de las imágenes.
+- `public/admin/index.html` y `public/admin/config.yml`: panel de contenido y colección `productos`. Falta el Client ID de la OAuth App de GitHub.
+- `RUNBOOK.md`: sección «Panel de contenido» y operación OP-12.
 - Versiones de la documentación alineadas a 1.3.0.
 
 **Etapas afectadas**
@@ -43,6 +47,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Etapa 05 — Contacto y conversión comercial: WhatsApp, correo y dirección reales, validados en navegador.
 - Etapa 06 — Adaptabilidad y optimización: imagen WebP y revisión en tres tamaños de pantalla.
 - Etapa 07 — SEO y publicación: favicon, `robots.txt`, `sitemap.xml` y sitio publicado en `https://16wood.vercel.app/`.
+- Etapa 08 — Mejoras posteriores: decisión de CMS basado en git (M-27) y cierre de M-24.
 
 **Validación**
 
@@ -59,6 +64,9 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `npm run build` correcto tras la configuración de Vercel: 1 página, sin rutas `/16Wood/` en `dist/index.html`, con `favicon.svg` y la imagen WebP en la raíz.
 - HTTP 200 en `http://localhost:4321/` para la página, el favicon, la imagen, `robots.txt` y `sitemap.xml`.
 - Producción verificada el 2026-11-24: `https://16wood.vercel.app/` responde HTTP 200 sin rutas `/16Wood/`; `robots.txt` y `sitemap.xml` apuntan a Vercel. Funcionamiento confirmado por César.
+- Carrusel corregido y confirmado por César: columnas automáticas del mismo ancho, 8 tarjetas y puntos sincronizados con el desplazamiento.
+- YML del panel y JSON del catálogo analizados sin errores: 10 campos y 8 productos.
+- `npm run build` correcto con el contenido en `products.json`: 1 página, 8 imágenes de producto en `dist/index.html` y `dist/admin/` con el panel. HTTP 200 en `/admin/index.html` y `/admin/config.yml` locales.
 
 ### 2026-11-24 — 1.2.2
 

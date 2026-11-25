@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: cesarcg1-dev/16Wood
+  branch: main
+  auth_type: implicit
+  app_id: TU_CLIENT_ID
+
+site_url: https://16wood.vercel.app/
+display_url: https://16wood.vercel.app/
+logo_url: https://16wood.vercel.app/favicon.svg
+
+media_folder: public/images/products
+public_folder: /images/products
+
+collections:
+  - name: productos
+    label: Productos
+    file: src/data/products.json
+    format: json
+    fields:
+      - label: Productos
+        name: productos
+        widget: list
+        fields:
+          - label: Referencia
+            name: referencia
+            widget: string
+          - label: Nombre
+            name: nombre
+            widget: string
+          - label: Categoría
+            name: categoria
+            widget: string
+          - label: Descripción
+            name: descripcion
+            widget: string
+          - label: Material
+            name: material
+            widget: string
+          - label: Precio
+            name: precio
+            widget: string
+          - label: Plazo de entrega
+            name: plazo_entrega
+            widget: string
+          - label: Imagen (nombre de archivo)
+            name: imagen
+            widget: string
+          - label: Texto alternativo
+            name: alt
+            widget: string
+          - label: Destacado
+            name: destacado
+            widget: boolean
+            default: true

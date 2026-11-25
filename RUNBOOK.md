@@ -16,6 +16,7 @@ Este documento reúne los comandos y pasos reales de este proyecto. Para qué se
 - [Pendiente de decisión](#pendiente-de-decisión)
 - [PocketBase local](#pocketbase-local)
 - [Publicación](#publicación)
+- [Panel de contenido](#panel-de-contenido)
 
 ## 2. OP. Operaciones
 
@@ -34,6 +35,7 @@ Todos los comandos se ejecutan dentro de `woodworking/`.
 |OP-09|Arrancar PocketBase|`.\backend\pocketbase.exe serve --http=127.0.0.1:8090`. Ver sección 7.|
 |OP-10|Crear colecciones|`powershell -ExecutionPolicy Bypass -File .\scripts\setup-pocketbase.ps1`. Pide credenciales al ejecutarse.|
 |OP-11|Publicar|Vercel detecta el proyecto Astro y compila con `npm run build`; cada push a `main` despliega `https://16wood.vercel.app/`.|
+|OP-12|Editar productos|Entrar a `https://16wood.vercel.app/admin/index.html`, iniciar sesión con GitHub y editar el archivo `src/data/products.json`.|
 
 **No disponibles:** este proyecto no tiene los scripts `npm test`, `npm run lint` ni `npm run format`. No ejecutarlos como si existieran.
 
@@ -101,6 +103,27 @@ Sitio estático publicado en Vercel (Etapa 07 del `Docs/ROADMAP.md`).
 |Archivos de soporte|`public/robots.txt`, `public/sitemap.xml` y `public/favicon.svg`.|
 
 El despliegue no sube PocketBase: la web publicada es estática y no depende del backend local. En Vercel, el directorio de salida es `dist/` y el framework detectado es Astro.
+
+## 9. Panel de contenido
+
+Decap CMS 3.18.0, sin base de datos: el contenido se guarda como archivos en el repositorio (M-27 en `Docs/MEJORAS.md`).
+
+|Elemento|Valor|
+|---|---|
+|Panel público|`https://16wood.vercel.app/admin/index.html` (OP-12).|
+|Panel local|`http://localhost:4321/admin/index.html`.|
+|Archivo que edita|`src/data/products.json`, colección `productos`.|
+|Configuración|`public/admin/config.yml`: backend `github`, rama `main`, autenticación `implicit`.|
+|Fotografías|Se suben a `public/images/products/` con git; en el panel se escribe solo el nombre de archivo.|
+|Codificación de la ruta|`src/data/products.ts` convierte cada nombre en `/images/products/<archivo>` usando `import.meta.env.BASE_URL`.|
+
+Para que el panel permita iniciar sesión, crear una **OAuth App** de GitHub con:
+
+- **Homepage URL:** `https://16wood.vercel.app/`
+- **Authorization callback URL:** `https://16wood.vercel.app/admin/index.html`
+- Copiar el **Client ID** (dato público) en `app_id` de `public/admin/config.yml`. El Client secret no se guarda en el repositorio ni se usa en este flujo.
+
+Cada edición desde el panel crea un commit en `main`; Vercel vuelve a desplegar automáticamente. Mientras el sitio sea estático, el cambio aparece cuando termina ese despliegue.
 
 ---
 
