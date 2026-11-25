@@ -8,7 +8,7 @@
 
 Aquí se registran las mejoras detectadas al revisar el código y la documentación. Cada mejora se marca como **Pendiente**, **En revisión** o **Hecha**.
 
-Estado actual: la mayoría figuran como **Pendiente**; M-24 quedó resuelta y M-27 está **En revisión**. El trabajo avanzó primero por las etapas de `Docs/ROADMAP.md`; esta lista se atiende en orden, empezando por M-01. Queda pendiente revisar y actualizar los estados del resto de las mejoras según el código vigente.
+Estado actual: la mayoría figuran como **Pendiente**; M-18 y M-24 quedaron resueltas y M-27 está **En revisión**. El trabajo avanzó primero por las etapas de `Docs/ROADMAP.md`; esta lista se atiende en orden, empezando por M-01. Queda pendiente revisar y actualizar los estados del resto de las mejoras según el código vigente.
 
 No se modifica código solo por aparecer en esta lista. Cada cambio debe tener una instrucción clara y terminar en una prueba, por ejemplo `npm run build`.
 
@@ -52,7 +52,7 @@ Las mejoras visuales deben respetar `Docs/ESTILOS.md` y `Docs/REFERENCIAS.md`.
 |ID|Mejora|Prioridad|Estado|
 |---|---|---|---|
 |M-17|Añadir `robots.txt` y `sitemap.xml` antes de publicar.|Media|Pendiente|
-|M-18|Añadir una imagen para `og:image` y revisar metadatos de redes sociales.|Media|Pendiente|
+|M-18|Añadir una imagen para `og:image` y revisar metadatos de redes sociales.|Media|Hecha|
 |M-19|Definir el dominio definitivo y revisar títulos y descripciones.|Media|Pendiente|
 |M-20|Configurar el despliegue de producción.|Media|Pendiente|
 

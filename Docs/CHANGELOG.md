@@ -36,6 +36,8 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - `src/data/products.json`: contenido del catálogo editable desde el panel; `src/data/products.ts` solo arma las rutas de las imágenes.
 - `public/admin/index.html` y `public/admin/config.yml`: panel de contenido y colección `productos`. Falta el Client ID de la OAuth App de GitHub.
 - `RUNBOOK.md`: sección «Panel de contenido» y operación OP-12.
+- M-18: canonical, Open Graph y Twitter, y `JSON-LD` de `LocalBusiness` en `src/layouts/Layout.astro`, con datos de `DATOSREALES.md`.
+- `Docs/CONTENT.md`: canonical, etiquetas sociales y datos estructurados añadidos al inventario de metadatos.
 - Versiones de la documentación alineadas a 1.3.0.
 
 **Etapas afectadas**
@@ -47,7 +49,7 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Etapa 05 — Contacto y conversión comercial: WhatsApp, correo y dirección reales, validados en navegador.
 - Etapa 06 — Adaptabilidad y optimización: imagen WebP y revisión en tres tamaños de pantalla.
 - Etapa 07 — SEO y publicación: favicon, `robots.txt`, `sitemap.xml` y sitio publicado en `https://16wood.vercel.app/`.
-- Etapa 08 — Mejoras posteriores: decisión de CMS basado en git (M-27) y cierre de M-24.
+- Etapa 08 — Mejoras posteriores: decisión de CMS basado en git (M-27), cierre de M-24 y metadatos de SEO (M-18).
 
 **Validación**
 
@@ -67,6 +69,8 @@ Cuando un cambio afecte a una etapa del `Docs/ROADMAP.md`, se menciona el númer
 - Carrusel corregido y confirmado por César: columnas automáticas del mismo ancho, 8 tarjetas y puntos sincronizados con el desplazamiento.
 - YML del panel y JSON del catálogo analizados sin errores: 10 campos y 8 productos.
 - `npm run build` correcto con el contenido en `products.json`: 1 página, 8 imágenes de producto en `dist/index.html` y `dist/admin/` con el panel. HTTP 200 en `/admin/index.html` y `/admin/config.yml` locales.
+- Auditoría SEO: Lighthouse 100 en SEO y buenas prácticas, 96 en accesibilidad; `robots.txt` y sitemap apuntan a Vercel.
+- `npm run build` correcto tras los metadatos: 1 canonical, 8 etiquetas Open Graph, 4 de Twitter y 1 bloque `JSON-LD` válido en `dist/index.html`; `og:image` apunta a la foto de la caja joyero.
 
 ### 2026-11-24 — 1.2.2
 

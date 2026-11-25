@@ -21,6 +21,9 @@ El código actual solo contiene la versión mínima de `src/pages/index.astro`. 
 |Idioma|`es`|`es`|
 |Favicon|`public/favicon.svg`, enlazado desde `Layout.astro`.|Sin favicon propio.|
 |URL pública|`https://16wood.vercel.app/`.|Sin URL de publicación.|
+|Canonical|`https://16wood.vercel.app/`, en `Layout.astro`.|Sin canonical.|
+|Open Graph y Twitter|8 y 4 etiquetas respectivamente; `og:image` usa la foto de la caja joyero.|Sin etiquetas sociales.|
+|Datos estructurados|`JSON-LD` de tipo `LocalBusiness` con contacto y dirección de `DATOSREALES.md`.|Sin datos estructurados.|
 
 La marca comercial definitiva está pendiente de confirmación. La documentación v1.0 usaba «Lignare»; no debe asumirse como nombre vigente.
 
