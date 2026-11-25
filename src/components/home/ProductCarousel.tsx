@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,15 @@ const pages = Math.max(1, Math.ceil(products.length / 3));
 
 export default function ProductCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const [paginaActiva, setPaginaActiva] = useState(0);
+
+  const alDesplazarse = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const maximo = track.scrollWidth - track.clientWidth;
+    const proporcion = maximo > 0 ? track.scrollLeft / maximo : 0;
+    setPaginaActiva(Math.round(proporcion * (pages - 1)));
+  };
 
   const scroll = (direction: -1 | 1) => {
     const track = trackRef.current;
@@ -54,14 +63,15 @@ export default function ProductCarousel() {
 
         <div
           ref={trackRef}
-          className="grid grid-flow-col grid-cols-[calc((100%-22px)/3)] gap-[11px] overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-[680px]:grid-cols-[82%] max-[680px]:gap-3"
+          onScroll={alDesplazarse}
+          className="grid grid-flow-col grid-cols-[calc((100%-22px)/3)] auto-cols-[calc((100%-22px)/3)] gap-[11px] overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-[680px]:grid-cols-[82%] max-[680px]:auto-cols-[82%] max-[680px]:gap-3"
         >
           {products.map((product) => (
             <Card key={product.referencia} className="snap-start">
               <img
                 src={product.imagen}
                 alt={product.alt}
-                className="block h-[185px] w-full object-cover max-[680px]:h-[190px]"
+                className="block h-[280px] w-full object-cover max-[680px]:h-[230px]"
                 loading="lazy"
               />
               <CardContent>
@@ -104,7 +114,7 @@ export default function ProductCarousel() {
         {Array.from({ length: pages }, (_, index) => (
           <span
             key={index}
-            className={`size-2 rounded-full ${index === 0 ? "bg-walnut" : "bg-[#dfcdbb]"}`}
+            className={`size-2 rounded-full ${index === paginaActiva ? "bg-walnut" : "bg-[#dfcdbb]"}`}
           />
         ))}
       </div>
